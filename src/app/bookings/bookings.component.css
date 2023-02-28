@@ -1,0 +1,21 @@
+.hover:hover{
+    box-shadow: 4px 4px 1px #1111118e;
+    transform: scale(1.01);
+}
+
+a{
+    text-decoration: none;
+    color: #111;
+}
+
+h5::after{
+    content: 'Edit';
+    position: absolute;
+    right: 12%;
+    font-size: .8rem;
+    background-color: lightgreen;
+    padding: .7rem .5rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    color: white;
+}

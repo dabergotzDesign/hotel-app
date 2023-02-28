@@ -1,0 +1,10 @@
+<div class="list-group m-4 w-50 mx-auto hover booking__item" *ngFor="let booking of bookings">
+  <div class="list-group-item list-group-item-action" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <a routerLink="/edit/{{booking.id}}"><h5 class="mb-1">{{booking.name}}</h5></a>
+        <button class="btn btn-secondary close" (click)="delete(booking)">&times;</button>
+      </div>
+      <p class="mb-1">Start: {{booking.startDate | date: "dd.MM.y"}}, End: {{booking.endDate | date: "dd.MM.y"}}</p>
+      <small>Room: {{booking.roomNumber}}</small>
+    </div>
+  </div>
