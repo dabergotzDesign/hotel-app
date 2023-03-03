@@ -8,14 +8,19 @@ a{
     color: #111;
 }
 
+h5{
+    text-transform: capitalize;
+}
+
 h5::after{
-    content: 'Edit';
+    content: '🖊';
     position: absolute;
     right: 12%;
-    font-size: .8rem;
-    background-color: lightgreen;
-    padding: .7rem .5rem;
+    font-size: 1rem;
+    padding: .6rem .7rem;
     border-radius: .5rem;
-    font-weight: bold;
-    color: white;
+}
+
+h5:hover::after{
+    border: 2px solid #0d6efd;
 }

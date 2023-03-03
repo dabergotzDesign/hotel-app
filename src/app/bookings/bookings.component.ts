@@ -13,12 +13,17 @@ export class BookingsComponent {
 
   bookings: Booking[] = [];
 
-  ngOnInit(){
-    this.bookings = this.bookingService.getBookings();
+  ngOnInit() {
+    this.bookingService.getBookings().subscribe((result: Booking[]) => {
+      //console.log(result); // Daten
+      this.bookings = result;
+    });
   }
 
   delete(booking: Booking): void {
-    this.bookingService.delete(booking);
+    this.bookingService.delete(booking).subscribe();
+    this.bookings = this.bookings.filter((b) => b !== booking);
   }
+
 }
 

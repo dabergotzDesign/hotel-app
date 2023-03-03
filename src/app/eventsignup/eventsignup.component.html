@@ -1,0 +1,40 @@
+<main class="form-signin w-50 m-auto bg-light p-5 rounded">
+    <form class="d-flex flex-column" #formSignup="ngForm">
+        <i class="bi bi-house m-auto fs-1 text-primary mb-4"></i>
+      <h1 class="h3 mb-3 text-center fw-normal">Please Sign In</h1>
+  
+      <div class="form-floating w-50 m-auto mb-3">
+        <input 
+        #inputEmail="ngModel"
+        [(ngModel)]="signUpMail"
+        name="signUpMail"
+        email
+        minlength="8"
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+        required>
+        <label for="floatingInput">Email Address</label>
+      </div>
+     
+      <button class="w-50 m-auto btn btn-lg btn-primary" type="submit" (click)="onSubmit()" [disabled]="formSignup.invalid">Sign In</button>
+
+      <div class="m-3" *ngIf="inputEmail.invalid && (inputEmail.touched || inputEmail.dirty)">
+        <div class="col">
+          <div class="alert alert-warning" *ngIf="inputEmail.errors?.['required']">Email Required</div>
+          <div class="alert alert-danger" *ngIf="inputEmail.errors?.['minlength']">Email Address not meeting min length (8)</div>
+          <div class="alert alert-danger" *ngIf="inputEmail.errors?.['email']">Invalid Email</div>
+        </div>
+      </div>
+
+
+
+      <p class="mt-5 mb-3 text-muted">© 2017-2023</p>     
+
+    </form>
+  </main>
+
+<!-- #inputEmail="ngModel"
+[(ngModel)]="signUpMail"
+ -->

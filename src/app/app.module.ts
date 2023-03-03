@@ -1,22 +1,34 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BookingsComponent } from './bookings/bookings.component';
-import { AppRoutingModule } from './app-routing.module';
 import { CreateBookingComponent } from './create-booking/create-booking.component';
-import { FormsModule } from '@angular/forms';
+
+import { InMemoryDataService } from './in-memory-data.service';
+import { EventsignupComponent } from './eventsignup/eventsignup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingsComponent,
-    CreateBookingComponent
+    CreateBookingComponent,
+    EventsignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [],
   bootstrap: [AppComponent]
